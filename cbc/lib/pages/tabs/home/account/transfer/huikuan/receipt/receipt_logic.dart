@@ -4,6 +4,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 import 'package:cbc/config/app_config.dart';
+import 'package:intl/intl.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
@@ -101,11 +102,24 @@ class ReceiptLogic extends GetxController {
     if(name == '付款户名') return showCard?AppConfig.config.abcLogic.realName():AppConfig.config.abcLogic.memberInfo.realName;
     if(name == '付款卡号') return  showCard?model.bankCard.maskBankCardNumber():model.bankCard;
     if(name == '付款银行') return model.bankName;
-    if(name == '回单编号') return model.certificateNo;
-    if(name == '指令序号') return model.serialNumber;
-    if(name == '交易时间') return model.transactionTime;
+    if(name == '回单编号') return model.serialNumber;
+    if(name == '指令序号') return model.certificateNo;
+    if(name == '交易时间') return formatTransactionTime(model.transactionTime);
     if(name == '附言') return model.merchantBranch;
     return '';
+  }
+
+  /// 将交易时间从“2026-02-21 21:00:00”格式化为“2026/02/21 21:00”
+  String formatTransactionTime(String time) {
+    if (time.isEmpty) return time;
+    try {
+      final dateTime = DateTime.parse(time);
+      return DateFormat('yyyy/MM/dd HH:mm').format(dateTime);
+    } catch (_) {
+      // 兜底处理：简单替换日期分隔符并去掉秒位
+      final safe = time.replaceAll('-', '/');
+      return safe.length >= 16 ? safe.substring(0, 16) : safe;
+    }
   }
 
   TextEditingController textController = TextEditingController();

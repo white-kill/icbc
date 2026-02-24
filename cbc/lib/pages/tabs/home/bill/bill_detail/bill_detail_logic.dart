@@ -66,9 +66,9 @@ class BillDetailLogic extends GetxController {
     if(name == '交易时间'){return billDetail.transactionTime;}
     if(name == '业务摘要'){return billDetail.excerpt;}
     if(name == '交易场所'){return billDetail.merchantBranch;}
-    if(name == '交易金额'){return billDetail.amount.bankBalance;}
+    if(name == '交易金额'){return billDetail.amount.bankBalance.replaceAll("-", "");}
     if(name == '交易国家或地区简称'){return billDetail.transactionCountry;}
-    if(name == '记账金额'){return billDetail.amount.bankBalance;}
+    if(name == '记账金额'){return billDetail.amount.bankBalance.replaceAll("-", "");}
     if(name == '记账币种'){return billDetail.transactionCurrency;}
     if(name == '对方账户'){return show?billDetail.oppositeAccount:billDetail.oppositeAccount.maskBankCardNumber();}
     if(name == '对方户名'){return billDetail.oppositeName;}
