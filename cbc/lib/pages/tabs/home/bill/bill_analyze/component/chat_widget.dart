@@ -463,9 +463,12 @@ class _ChatWidgetState extends State<ChatWidget> {
                                     DateTime.parse(details.text);
                                 int month = dateTime.month; // 获取月份（1-12）
                                 int year = dateTime.year;
+                                // 如果是1月，展示类似“26年1月”的格式，否则只展示“x月”
                                 return ChartAxisLabel(
                                   logic.selectName.value == '月度分析'
-                                      ? '$month月'
+                                      ? (month == 1
+                                          ? '${year % 100}年$month月'
+                                          : '$month月')
                                       : '$year年',
                                   TextStyle(
                                     fontSize: 10.sp,
