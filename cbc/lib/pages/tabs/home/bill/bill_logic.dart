@@ -71,6 +71,9 @@ class BillLogic extends GetxController {
         if(e.day == ''){
           mCount++;
         }
+        if(e.day.isNotEmpty) {
+          e.day = e.day.replaceAll('年0', '年');
+        }
         if(e.type == '1'){
           state.incomeTotal = state.incomeTotal + double.parse(e.amount);
         }else{

@@ -126,22 +126,13 @@ class _BillItemMonthState extends State<BillItemMonth> {
                 : Column(
                     children: [
                       Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Image(
-                              image: 'ic_tag_w'.png3x,
-                              width: 15.w,
-                              height: 15.w,
-                              color: Color(0xffE02D2D)).withOnTap(onTap: (){
-                            AlterWidget.alterWidget(builder: (context) {
-                              return const BillTip();
-                            });
-                          }),
-                          SizedBox(width: 4.w,),
-                          BaseText(text: '收 '),
+                          BaseText(text: '收 ', fontSize: 15.sp,),
                           buildAmountText(
                             amount: '¥${widget.model.incomeTotal.bankBalance}',
                             color: BColors.mainColor,
-                            fontSize: 15.sp,
+                            fontSize: 19.sp,
                           ),
                         ],
                       ),
@@ -149,16 +140,13 @@ class _BillItemMonthState extends State<BillItemMonth> {
                         height: 4.w,
                       ),
                       Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Container(
-                            width: 15.w,
-                            height: 15.w,),
-                          SizedBox(width: 4.w,),
-                          BaseText(text: '支 '),
+                          BaseText(text: '支 ', fontSize: 15.sp,),
                           buildAmountText(
                             amount: '¥${widget.model.expensesTotal.bankBalance}',
                             color: const Color(0xff35827D),
-                            fontSize: 15.sp,
+                            fontSize: 19.sp,
                           ),
                         ],
                       ),

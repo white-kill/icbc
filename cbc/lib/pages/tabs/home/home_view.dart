@@ -10,6 +10,7 @@ import 'package:wb_base_widget/text_widget/bank_text.dart';
 
 import '../../../routes/app_pages.dart';
 import '../../component/placeholder_search_widget.dart';
+import './login_out/login_out_view.dart';
 import 'component/home_content_widget2.dart';
 import 'component/home_content_widget3.dart';
 import 'component/home_content_widget4.dart';
@@ -38,7 +39,10 @@ class HomePage extends BaseStateless {
     color: logic.navActionColor.value,
     leftWidget: !logic.navChange.value?BaseText(text: '退出',fontSize: 15.sp,).withContainer(
       padding: EdgeInsets.only(left: 12.w),
-      onTap: () => Get.offAllNamed(Routes.login),
+      onTap: () => {
+        Get.to(() => LoginOutPage())
+        //  Get.offAllNamed(Routes.login)
+      },
     ):null,
   ));
 
