@@ -24,11 +24,11 @@ class _FunctionBannerWidgetState extends State<FunctionBannerWidget> {
       {'image': 'ic_fhome_1_', 'name': '热门活动'},
       {'image': 'ic_fhome_1_', 'name': '贷款'},
       {'image': 'ic_fhome_1_', 'name': '生活缴费'},
-      {'image': 'ic_fhome_1_', 'name': '信用报告'},
-      {'image': 'ic_fhome_1_', 'name': '工银i豆商城'},
       {'image': 'ic_fhome_1_', 'name': '医保'},
       {'image': 'ic_fhome_1_', 'name': '薪管家'},
-      {'image': 'ic_fhome_1_', 'name': '资产'}
+      {'image': 'ic_fhome_1_', 'name': '资产'},
+      {'image': 'ic_fhome_1_', 'name': '天天盈'},
+      {'image': 'ic_fhome_1_', 'name': '贵金属'}
     ],
     // [
     //   {'image': 'ic_fhome_2_', 'name': '信用卡'},
