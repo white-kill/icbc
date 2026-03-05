@@ -245,6 +245,22 @@ class _HomeContentWidget1State extends State<HomeContentWidget1> {
                         Get.toNamed(Routes.homeRobotPage);
                       }),
                       Positioned(
+                          left: 15.w,
+                          bottom: 30.w,
+                          child:
+                          Container(
+                            width: 55.w,
+                            height: (55/172*143).w,
+                            color: Colors.blue,
+                          )
+
+                          // Image(
+                          //   image: 'ic_fhome_jqr'.png3x,
+                          //   width: 55.w,
+                          //   height: (55/172*143).w,
+                          // )
+                      ),
+                      Positioned(
                           bottom: 0,
                           child: Container(
                             width: 1.sw - 30.w,
