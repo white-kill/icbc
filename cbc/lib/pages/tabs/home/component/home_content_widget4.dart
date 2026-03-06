@@ -36,6 +36,15 @@ class _HomeContentWidget4State extends State<HomeContentWidget4> {
             ).withOnTap(onTap: () {
               Get.toNamed(Routes.homeRobotPage);
             }),
+            Positioned(
+                left: 15.w,
+                bottom: 30.w,
+                child: Image(
+                  image: 'ic_fhome_jqr4'.png3x,
+                  width: 55.w,
+                  height: (55/172*143).w,
+                )
+            ),
             Positioned(bottom:0 ,child: Container(
               width: 1.sw - 30.w,
               height: 40.w,
